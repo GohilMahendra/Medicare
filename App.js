@@ -21,6 +21,8 @@ const App= ()  => {
     <SafeAreaView style={{flex:1}}>
    <Homestack/>
 
+
+
     </SafeAreaView>
   );
 };

@@ -19,8 +19,10 @@ return(
 
             
             >
-                <MapboxGL.MarkerView>
-                    
+                <MapboxGL.MarkerView
+                
+                >
+
                 </MapboxGL.MarkerView>
                
 
