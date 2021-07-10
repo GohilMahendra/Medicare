@@ -3,7 +3,6 @@ import { View ,Text, Dimensions,TextInput, Image,TouchableOpacity} from "react-n
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
 const home=()=>
 {
@@ -12,7 +11,8 @@ const home=()=>
     const {height,width}=Dimensions.get('screen')
     return(
     <View style={{flex:1,marginHorizontal:20}}>
-        <View style={{flexDirection:"row",alignItems:"center",
+        <Text>HU</Text>
+        {/* <View style={{flexDirection:"row",alignItems:"center",
             height:'10%',
             justifyContent:"space-between",
         }}>
@@ -92,7 +92,7 @@ const home=()=>
                 COVID 19 vaccinations are in
             </Text>
         </View>
-        </View>
+        </View> */}
 
         
     </View>
