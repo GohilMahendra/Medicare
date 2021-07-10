@@ -1,0 +1,51 @@
+# Check out https://docs.codemagic.io/getting-started/building-a-react-native-app/ for more information
+# Please review and update values in curly braces
+
+workflows:
+    react-native:
+        name: React Native workflow
+        environment:
+            vars:
+                XCODE_WORKSPACE: "Medicare"
+                XCODE_SCHEME: "Medicare"
+                CM_CERTIFICATE_PASSWORD : 1
+            node: latest
+            xcode: latest
+            cocoapods: default
+        # triggering:
+        #     events:
+        #         - push
+        #     branch_patterns:
+        #         - pattern: master
+        #             include: true
+        #             source: true
+        scripts:
+            - npm install
+            # - keychain initialize
+            # - echo $FCI_CERTIFICATE_PASSWORD
+            # - |
+            #     # set up provisioning profiles
+            #     PROFILES_HOME="$HOME/Library/MobileDevice/Provisioning Profiles"
+            #     mkdir -p "$PROFILES_HOME"
+            #     PROFILE_PATH="$(mktemp "$PROFILES_HOME"/$(uuidgen).mobileprovision)"
+            #     echo ${CM_PROVISIONING_PROFILE} | base64 --decode > $PROFILE_PATH
+            #     echo "Saved provisioning profile $PROFILE_PATH"  
+
+            # - |
+            #     # set up signing certificate
+            #     echo $FCI_CERTIFICATE | base64 --decode > /tmp/certificate.p12
+            #     keychain add-certificates --certificate /tmp/certificate.p12 --certificate-password $CM_CERTIFICATE_PASSWORD
+           
+            # - xcode-project use-profiles
+          
+            - |
+                # build iOS
+                cd ios
+                pod install
+                ls
+                xcodebuild -scheme "$XCODE_SCHEME" -workspace "$XCODE_WORKSPACE.xcworkspace" -configuration Release clean archive -archivePath "build/APPNAME.xcarchive" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO  
+                
+                
+                  
+
+            
