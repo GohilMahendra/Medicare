@@ -44,6 +44,8 @@ workflows:
                 pod install
                 ls
                 xcodebuild -scheme "$XCODE_SCHEME" -workspace "$XCODE_WORKSPACE.xcworkspace" -configuration Release clean archive -archivePath "build/APPNAME.xcarchive" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO  
+                xcodebuild -exportArchive -archivePath build/APPNAME.xcarchive -exportOptionsPlist exportOptions.plist -exportPath build/APPNAME.ipa
+
                 
                 
                   
