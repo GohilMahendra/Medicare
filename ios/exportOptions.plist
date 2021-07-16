@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>method</key>
-	<string>ad-hoc</string>
-	<key>teamID</key>
-	<string>XXXXXXXXXX</string>
+	<string>app-store</string>
+	<!-- <key>teamID</key>
+	<string>XXXXXXXXXX</string> -->
 </dict>
 </plist>
