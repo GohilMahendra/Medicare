@@ -1,12 +1,21 @@
 import React from "react";
 import { View,TextInput, Dimensions,ImageBackground,Text, TouchableOpacity } from "react-native";
-import { useState } from "react/cjs/react.production.min";
 
 const Login=()=>
 {
     const {height,width}=Dimensions.get('screen')
     const inputHeight=height/12
 
+
+    const testPro=()=>
+    {
+        var obj={
+            hey:"new",
+            bey:"new"
+        }
+
+        obj.bey="few"
+    }
     return(
         <View style={{flex:1,backgroundColor:"#7CB9E8",justifyContent:"center"}}>
             <ImageBackground 
@@ -36,6 +45,7 @@ const Login=()=>
                         borderRadius:20}}
                 />
                     <TouchableOpacity
+                    onPress={()=>testPro()}
                     style={{backgroundColor:"blue",alignContent:"center",height:50}}
                     >
                         <Text style={{color:"#fff",letterSpacing:2,fontSize:20}}>

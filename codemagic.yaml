@@ -43,8 +43,9 @@ workflows:
                 cd ios
                 pod install
                 ls
+                xcodebuild -scheme "$XCODE_SCHEME" -workspace "$XCODE_WORKSPACE.xcworkspace" -sdk iphonesimulator
                 xcodebuild -scheme "$XCODE_SCHEME" -workspace "$XCODE_WORKSPACE.xcworkspace" -configuration Release clean archive -archivePath "Build/APPNAME.xcarchive" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO  
-        
+
                 xcodebuild -exportArchive -archivePath build/APPNAME.xcarchive -exportOptionsPlist exportOptions.plist -exportPath build/APPNAME.ipa
 
         artifacts:
@@ -54,8 +55,7 @@ workflows:
              - ios/Build/*.xcarchive
              - ios/Build/*.ipa
              - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.xcarchive
-                
+             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/Products/Release-iphonesimulator/*.app
                 
                   
-
             
