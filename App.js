@@ -19,7 +19,8 @@ const App= ()  => {
 
   return (
     <SafeAreaView style={{flex:1}}>
-   <Homestack/>
+  
+    <Text>HELLLP</Text>
 
 
 
